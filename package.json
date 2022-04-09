@@ -1,0 +1,18 @@
+{
+  "name": "hashrest",
+  "version": "0.0.1",
+  "description": "Simple REST server that solves cryptographic puzzles.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adolan5/HashREST.git"
+  },
+  "author": "Andy Dolan",
+  "bugs": {
+    "url": "https://github.com/adolan5/HashREST/issues"
+  },
+  "homepage": "https://github.com/adolan5/HashREST#readme"
+}
