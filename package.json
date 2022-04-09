@@ -4,7 +4,7 @@
   "description": "Simple REST server that solves cryptographic puzzles.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -14,5 +14,13 @@
   "bugs": {
     "url": "https://github.com/adolan5/HashREST/issues"
   },
-  "homepage": "https://github.com/adolan5/HashREST#readme"
+  "homepage": "https://github.com/adolan5/HashREST#readme",
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
 }
