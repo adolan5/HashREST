@@ -1,5 +1,6 @@
 import { HashWorker } from '../src/hash_worker';
 import { expect } from 'chai';
+import * as sinon from 'sinon';
 
 describe('hash worker', () => {
   it('should return a target value', () => {
