@@ -1,13 +1,13 @@
 export class HashWorker {
   input: string;
-  difficultyTarget: number;
+  difficultyTarget: bigint;
 
-  constructor(input: string, target: number) {
+  constructor(input: string, target: bigint) {
     this.input = input;
     this.difficultyTarget = target;
   }
 
-  getTarget(): number {
+  getTarget(): bigint {
     return this.difficultyTarget;
   }
 }

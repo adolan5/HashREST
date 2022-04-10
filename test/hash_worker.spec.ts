@@ -4,7 +4,7 @@ import * as sinon from 'sinon';
 
 describe('hash worker', () => {
   it('should return a target value', () => {
-    const target = 0x00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+    const target: bigint = BigInt(0x00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF);
     const hw = new HashWorker('foo', target);
     expect(hw.getTarget()).to.equal(target);
   });
