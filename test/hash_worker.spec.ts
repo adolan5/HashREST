@@ -35,8 +35,7 @@ describe('hash worker', () => {
 
   it('should verify an existing result', () => {
     let testNonce = '8451104d8488b3b6';
-    options.nonce = testNonce;
-    let hw = new HashWorker(input, options);
+    let hw = new HashWorker(input, options, testNonce);
     expect(() => hw.verify()).to.not.throw();
     expect(hw.result).to.equal('0b95f00efb7ae9deaf2feb7f2928b19bcc50e65af0afb55bd94fbee62c081d76');
 
