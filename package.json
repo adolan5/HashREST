@@ -4,7 +4,7 @@
   "description": "Simple REST server that solves cryptographic puzzles.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+    "test": "mocha --full-trace -r ts-node/register test/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
     "sinon": "^13.0.1",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "winston": "^3.7.2"
   }
 }
