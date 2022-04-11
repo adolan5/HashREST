@@ -10,19 +10,20 @@ const logger = winston.createLogger({
 export class HashWorker {
   input: string;
   difficultyTarget: number;
-  result?: string;
   nonce?: string;
+  result?: string;
 
-  constructor(input: string, target: number) {
+  constructor(input: string, target: number, nonce?: string) {
     this.input = input;
     this.difficultyTarget = target;
+    this.nonce = nonce;
   }
 
   getTarget(): number {
     return this.difficultyTarget;
   }
 
-  doWork(): void {
+  doWork() {
     logger.info(`Starting work with input ${this.input}`);
     let iters = 0;
     do {
@@ -32,5 +33,10 @@ export class HashWorker {
       logger.debug(`Resultant hash for iteration ${iters}: ${this.result}`);
     } while(Number('0x' + this.result) > this.difficultyTarget);
     logger.info(`Finished after ${iters} iterations`);
+  }
+
+  verify(nonce?: string) {
+    let testNonce = nonce ? nonce : this.nonce;
+    this.result = createHash('sha256').update(this.input + testNonce).digest('hex');
   }
 }
