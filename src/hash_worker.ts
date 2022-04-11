@@ -9,17 +9,17 @@ const logger = winston.createLogger({
 
 export class HashWorker {
   input: string;
-  difficultyTarget: number;
+  difficultyTarget: bigint;
   nonce?: string;
   result?: string;
 
-  constructor(input: string, target: number, nonce?: string) {
+  constructor(input: string, target: bigint, nonce?: string) {
     this.input = input;
     this.difficultyTarget = target;
     this.nonce = nonce;
   }
 
-  getTarget(): number {
+  getTarget(): bigint {
     return this.difficultyTarget;
   }
 

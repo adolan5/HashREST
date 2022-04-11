@@ -4,7 +4,7 @@ import * as sinon from 'sinon';
 
 describe('hash worker', () => {
   const input = 'foo';
-  const target: number = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
+  const target: bigint = BigInt(0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF);
 
   it('should return a target value', () => {
     let hw = new HashWorker(input, target);
@@ -14,7 +14,8 @@ describe('hash worker', () => {
   it('should generate a hash that is less than the specified target difficulty', () => {
     let hw = new HashWorker(input, target);
     expect(() => hw.doWork()).to.not.throw();
-    expect(Number('0x' + hw.result)).to.be.below(target);
+    // Regular .below() assertion does not work with BigInt
+    expect(BigInt('0x' + hw.result) < target);
   });
 
   // TODO
